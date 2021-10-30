@@ -57,5 +57,17 @@ public class UserValidatorTest {
         System.out.println(result);
     }
 
+    public void givenMobileNumber_NotProper() {
+        UserValidator validator = new UserValidator();
+        String result = null;
+        try {
+            result = validator.valiadeMobileNumber("77560962711");
+        } catch (UserValidatorExceptions e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals("7756096271",result);
+        System.out.println(result);
+    }
+
 
 }
