@@ -31,5 +31,31 @@ public class UserValidatorTest {
         System.out.println(result);
     }
 
+    @Test
+    public void givenLastName_WhenShort_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        String result = null;
+        try {
+            result = validator.valiadeLastName("Br");
+        } catch (UserValidatorExceptions e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals("Barkade",result);
+        System.out.println(result);
+    }
+
+    @Test
+    public void givenLastName_WhenSpChars_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        String result = null;
+        try {
+            result = validator.valiadeLastName("Bar#kade");
+        } catch (UserValidatorExceptions e) {
+            e.printStackTrace();
+        }
+        Assertions.assertEquals("Barkade", result);
+        System.out.println(result);
+    }
+
 
 }
